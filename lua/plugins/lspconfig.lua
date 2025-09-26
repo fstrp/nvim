@@ -5,7 +5,7 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -26,7 +26,7 @@ return { -- LSP Configuration & Plugins
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") --  For example, in C this would take you to the header.
 				vim.keymap.set(
 					"i",
-					"<C-x>",
+					"<C-S-x>",
 					vim.lsp.buf.signature_help,
 					{ buffer = event.buf, desc = "LSP: Signature Help" }
 				)

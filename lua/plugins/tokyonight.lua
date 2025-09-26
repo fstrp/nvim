@@ -6,4 +6,3 @@ return {
 		vim.cmd.hi("Comment gui=none") -- You can configure highlights by doing something like this
 	end,
 }
-
