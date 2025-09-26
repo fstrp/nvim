@@ -18,17 +18,7 @@ vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<C
 vim.keymap.set("n", "¨", "]", { remap = true })
 vim.keymap.set("n", "ü", "[", { remap = true })
 
-vim.keymap.set("n", "]q", "<cmd>cnext<CR>zz", { desc = "Move to next Quickfix item" })
-vim.keymap.set("n", "[q", "<cmd>cprevious<CR>zz", { desc = "Move to previous Quickfix item" })
-vim.keymap.set("n", "]Q", "<cmd>clast<CR>zz", { desc = "Move to last Quickfix item" })
-vim.keymap.set("n", "[Q", "<cmd>cfirst<CR>zz", { desc = "Move to first Quickfix item" })
-
-vim.keymap.set("n", "]b", "<cmd>bnext<CR>zz", { desc = "Move to next buffer" })
-vim.keymap.set("n", "[b", "<cmd>bprevious<CR>zz", { desc = "Move to previous buffer" })
-vim.keymap.set("n", "]B", "<cmd>blast<CR>zz", { desc = "Move to last buffer" })
-vim.keymap.set("n", "[B", "<cmd>bfirst<CR>zz", { desc = "Move to first buffer" })
-
-vim.keymap.set("n", "]l", "<cmd>lnext<CR>zz", { desc = "Move to next Loclist item" })
-vim.keymap.set("n", "[l", "<cmd>lprevious<CR>zz", { desc = "Move to previous Loclist item" })
-vim.keymap.set("n", "]L", "<cmd>llast<CR>zz", { desc = "Move to last Loclist item" })
-vim.keymap.set("n", "[L", "<cmd>lfirst<CR>zz", { desc = "Move to first Loclist item" })
+vim.keymap.set("n", "gK", function()
+	local new_config = not vim.diagnostic.config().virtual_lines
+	vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle diagnostic virtual_lines" })

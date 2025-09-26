@@ -9,7 +9,7 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<tab>"] = { "select_and_accept" },
+			["<tab>"] = { "select_and_accept", "fallback" },
 			["<c-l>"] = { "snippet_forward" },
 			["<c-h>"] = { "snippet_backward" },
 		},
@@ -31,16 +31,9 @@ return {
 		completion = {
 			accept = { create_undo_point = false },
 			ghost_text = { enabled = true },
-			menu = { border = "rounded" },
-			documentation = {
-				auto_show = true,
-				window = { border = "rounded" },
-			},
+			documentation = { auto_show = true },
 		},
-		signature = {
-			enabled = true,
-			window = { border = "rounded" },
-		},
+		signature = { enabled = true },
 		fuzzy = { use_frecency = false },
 	},
 	opts_extend = { "sources.default" },
