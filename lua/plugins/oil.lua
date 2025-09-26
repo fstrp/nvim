@@ -1,5 +1,7 @@
 return {
 	"stevearc/oil.nvim",
+	---@module 'oil.nvim'
+	---@type oil.SetupOpts
 	opts = {
 		keymaps = {
 			["<C-s>"] = false,

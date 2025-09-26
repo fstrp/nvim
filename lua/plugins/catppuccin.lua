@@ -2,9 +2,11 @@ return {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
+	---@type CatppuccinOptions
 	opts = {
 		integrations = {
 			diffview = true,
+			mason = true,
 		},
 		custom_highlights = function(colors)
 			local c = require("catppuccin.utils.colors")
