@@ -1,4 +1,6 @@
-return { -- LSP Configuration & Plugins
+---@module 'lazy.core.plugin'
+---@type LazySpec
+return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "williamboman/mason.nvim", opts = {} },

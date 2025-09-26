@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"stevearc/oil.nvim",
 	---@module 'oil'

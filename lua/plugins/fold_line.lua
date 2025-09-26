@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"gh-liu/fold_line.nvim",
 	event = "VeryLazy",

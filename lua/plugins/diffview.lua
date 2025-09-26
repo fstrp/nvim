@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"sindrets/diffview.nvim",
 	config = function(_, _)

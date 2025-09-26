@@ -1,4 +1,6 @@
-return { -- Autoformat
+---@module 'lazy.core.plugin'
+---@type LazySpec
+return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },

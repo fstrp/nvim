@@ -1,5 +1,7 @@
 ---@diagnostic disable: missing-fields
-return { -- Adds git related signs to the gutter, as well as utilities for managing changes
+---@module 'lazy.core.plugin'
+---@type LazySpec
+return {
 	"lewis6991/gitsigns.nvim",
 	---@module 'gitsigns.config'
 	---@type Gitsigns.Config

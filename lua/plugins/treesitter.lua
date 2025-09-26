@@ -1,4 +1,6 @@
-return { -- Highlight, edit, and navigate code
+---@module 'lazy.core.plugin'
+---@type LazySpec
+return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	main = "nvim-treesitter.configs",

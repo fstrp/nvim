@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",

@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"nvim-telescope/telescope.nvim",
 	event = "VimEnter",

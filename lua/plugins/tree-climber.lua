@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"drybalka/tree-climber.nvim",
 	config = function()

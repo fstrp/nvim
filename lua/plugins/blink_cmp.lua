@@ -1,3 +1,5 @@
+---@module 'lazy.core.plugin'
+---@type LazySpec
 return {
 	"saghen/blink.cmp",
 	dependencies = "rafamadriz/friendly-snippets",
