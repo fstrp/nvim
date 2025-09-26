@@ -29,3 +29,7 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("c", "<tab>", "<C-y>", { silent = true, remap = true }) -- fixes issue with nvim-cmp
+
+vim.keymap.set("n", "<leader>gt", "<cmd>silent !TortoiseGitProc /command:log<CR>", { desc = "TortoiseGit log" })
+vim.keymap.set("n", "<leader>gc", "<cmd>silent !TortoiseGitProc /command:commit<CR>", { desc = "TortoiseGit commit" })
+vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<CR>", { desc = "TortoiseGit fetch" })

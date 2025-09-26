@@ -24,4 +24,11 @@ require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ import = "plugins" },
-}, {})
+}, {
+	ui = {
+		border = "rounded",
+	},
+	change_detection = {
+		notify = false,
+	},
+})

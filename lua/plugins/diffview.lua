@@ -31,6 +31,11 @@ return {
 					layout = "diff4_mixed",
 				},
 			},
+			hooks = {
+				diff_buf_read = function(_)
+					vim.opt_local.relativenumber = false
+				end,
+			},
 		})
 	end,
 	keys = {
