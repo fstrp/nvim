@@ -4,6 +4,7 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {},
+	enabled = false,
 	config = function()
 		local fzf = require("fzf-lua")
 		fzf.register_ui_select({})
