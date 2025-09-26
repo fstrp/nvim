@@ -32,6 +32,12 @@ return {
 			accept = { create_undo_point = false },
 			ghost_text = { enabled = true },
 			documentation = { auto_show = true },
+			list = {
+				selection = {
+					preselect = false,
+					auto_insert = false,
+				},
+			},
 		},
 		signature = { enabled = true },
 		fuzzy = { use_frecency = false },

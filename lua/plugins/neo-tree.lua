@@ -13,7 +13,7 @@ return {
 		{ "<leader>e", ":Neotree reveal right<CR>", desc = "NeoTree reveal" },
 	},
 	---@module 'neo-tree.defaults'
-	---@type neotree.Config.Base
+	---@type neotree.Config
 	---@diagnostic disable-next-line: missing-fields
 	opts = {
 		close_if_last_window = true,

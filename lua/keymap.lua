@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<C
 
 vim.keymap.set("n", "¨", "]", { remap = true })
 vim.keymap.set("n", "ü", "[", { remap = true })
+vim.keymap.set("n", "<M-CR>", "gra", { remap = true })
 
 vim.keymap.set("n", "gK", function()
 	local new_config = not vim.diagnostic.config().virtual_lines

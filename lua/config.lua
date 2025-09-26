@@ -3,7 +3,7 @@ vim.diagnostic.config({
 		severity = { min = vim.diagnostic.severity.ERROR },
 	},
 	underline = {
-		severity = { min = vim.diagnostic.severity.WARN },
+		severity = { min = vim.diagnostic.severity.HINT },
 	},
 	signs = {
 		text = {
