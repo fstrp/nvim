@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	---@module 'oil.nvim'
+	---@module 'oil'
 	---@type oil.SetupOpts
 	opts = {
 		keymaps = {

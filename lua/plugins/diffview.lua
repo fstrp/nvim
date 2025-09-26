@@ -30,6 +30,8 @@ return {
 				merge_tool = {
 					layout = "diff4_mixed",
 				},
+				default = { disable_diagnostics = true },
+				file_history = { disable_diagnostics = true },
 			},
 			hooks = {
 				diff_buf_read = function(_)

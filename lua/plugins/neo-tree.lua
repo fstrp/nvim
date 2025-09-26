@@ -3,13 +3,16 @@ return {
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
 	cmd = "Neotree",
 	keys = {
 		{ "<leader>e", ":Neotree reveal right<CR>", desc = "NeoTree reveal" },
 	},
+	---@module 'neo-tree.defaults'
+	---@type neotree.Config.Base
+	---@diagnostic disable-next-line: missing-fields
 	opts = {
 		close_if_last_window = true,
 		filesystem = {

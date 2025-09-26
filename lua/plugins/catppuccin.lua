@@ -7,6 +7,7 @@ return {
 		integrations = {
 			diffview = true,
 			mason = true,
+			blink_cmp = true,
 		},
 		custom_highlights = function(colors)
 			local c = require("catppuccin.utils.colors")

@@ -11,6 +11,7 @@ return {
 			right_pad = 10,
 		},
 		quote = { repeat_linebreak = true },
+		completions = { lsp = { enabled = true } },
 		win_options = {
 			showbreak = { default = "", rendered = "  " },
 			breakindent = { default = false, rendered = true },
