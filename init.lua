@@ -21,13 +21,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	{ import = "plugins" },
-}, {
+	spec = {
+		"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+		{ import = "plugins" },
+	},
 	ui = {
 		border = "rounded",
 	},
 	change_detection = {
 		notify = false,
+	},
+	rocks = {
+		enabled = false,
 	},
 })

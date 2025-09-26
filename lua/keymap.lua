@@ -7,18 +7,8 @@ vim.keymap.set({ "n", "v" }, "<leader>P", '"0P', { desc = "Paste last yanked bef
 -- <C-v> seems to work without extra keymap
 vim.keymap.set("v", "<C-c>", '"*y', { desc = "[C]opy to system [C]lipboard" })
 
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
-vim.keymap.set("v", "<A-h>", "<gv", { desc = "Unindent" })
-vim.keymap.set("v", "<A-l>", ">gv", { desc = "Indent" })
-
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("c", "<tab>", "<C-y>", { silent = true, remap = true }) -- fixes issue with nvim-cmp
 
