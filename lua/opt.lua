@@ -31,7 +31,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 vim.opt.timeoutlen = 400
 
 -- Configure how new splits should be opened
@@ -50,6 +49,7 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 20
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
