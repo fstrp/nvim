@@ -23,11 +23,16 @@ return { -- LSP Configuration & Plugins
 				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-				map("K", vim.lsp.buf.hover, "Hover Documentation")
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") --  For example, in C this would take you to the header.
+				vim.keymap.set(
+					"i",
+					"<C-Space>",
+					vim.lsp.buf.signature_help,
+					{ buffer = event.buf, desc = "LSP: Signature Help" }
+				)
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				if client and client.server_capabilities.documentHighlightProvider then
+				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 					local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 						buffer = event.buf,
@@ -53,9 +58,9 @@ return { -- LSP Configuration & Plugins
 				-- The following autocommand is used to enable inlay hints in your
 				-- code, if the language server you are using supports them
 				-- This may be unwanted, since they displace some of your code
-				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()
-						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 					end, "[T]oggle Inlay [H]ints")
 				end
 			end,
@@ -117,4 +122,3 @@ return { -- LSP Configuration & Plugins
 		})
 	end,
 }
-
