@@ -26,7 +26,7 @@ return { -- LSP Configuration & Plugins
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") --  For example, in C this would take you to the header.
 				vim.keymap.set(
 					"i",
-					"<C-Space>",
+					"<C-x>",
 					vim.lsp.buf.signature_help,
 					{ buffer = event.buf, desc = "LSP: Signature Help" }
 				)
@@ -60,7 +60,7 @@ return { -- LSP Configuration & Plugins
 				-- This may be unwanted, since they displace some of your code
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()
-						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 					end, "[T]oggle Inlay [H]ints")
 				end
 			end,

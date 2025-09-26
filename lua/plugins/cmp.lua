@@ -39,7 +39,7 @@ return { -- Autocompletion
 				["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Scroll the documentation window [b]ack
 				["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll the documentation window [f]orward
 				["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept the completion.
-				["<C-Space>"] = cmp.mapping.complete({}), -- Manually trigger a completion from nvim-cmp.
+				["<C-x>"] = cmp.mapping.complete({}), -- Manually trigger a completion from nvim-cmp.
 
 				-- Think of <c-l> as moving to the right of your snippet expansion.
 				--  So if you have a snippet that's like:
