@@ -28,6 +28,10 @@ return { -- Autocompletion
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(), --broken? https://github.com/hrsh7th/nvim-cmp/issues/1958
+			},
 			completion = { completeopt = "menu,menuone,noinsert" },
 
 			mapping = cmp.mapping.preset.insert({
