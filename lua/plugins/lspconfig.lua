@@ -14,6 +14,7 @@ return { -- LSP Configuration & Plugins
 				},
 			},
 		},
+		{ "Bilal2453/luvit-meta", lazy = true },
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -108,6 +109,11 @@ return { -- LSP Configuration & Plugins
 					Lua = {
 						completion = {
 							callSnippet = "Replace",
+						},
+						hint = {
+							enable = true,
+							arrayIndex = "Enable",
+							setType = true,
 						},
 					},
 				},
