@@ -1,7 +1,7 @@
 return { -- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+		{ "williamboman/mason.nvim", opts = {} },
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -128,14 +128,13 @@ return { -- LSP Configuration & Plugins
 			},
 		}
 
-		require("mason").setup()
-
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+		---@diagnostic disable-next-line: missing-fields
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
