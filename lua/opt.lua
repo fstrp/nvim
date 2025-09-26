@@ -1,6 +1,10 @@
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = not vim.opt.diff:get()
 vim.opt.mouse = "a"
+
+vim.opt.wrap = false
+vim.opt.fillchars:append({ diff = " " })
+vim.opt.diffopt:append({ "iwhiteall", "linematch:60", "indent-heuristic", "algorithm:histogram", "context:30" })
 
 vim.opt.title = true
 vim.opt.titlestring = "nvim: %{split(split(getcwd(), '\\')[-1], '/')[-1]}"
