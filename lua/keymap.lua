@@ -6,11 +6,10 @@ vim.keymap.set({ "n", "x" }, "<leader>P", '"0P', { desc = "Paste last yanked bef
 
 -- <C-v> seems to work without extra keymap
 vim.keymap.set("v", "<C-c>", '"*y', { desc = "[C]opy to system [C]lipboard" })
+vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete Word" })
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
-vim.keymap.set("c", "<tab>", "<C-y>", { silent = true, remap = true }) -- fixes issue with nvim-cmp
 
 vim.keymap.set("n", "<leader>gt", "<cmd>silent !TortoiseGitProc /command:log<CR>", { desc = "TortoiseGit log" })
 vim.keymap.set("n", "<leader>gc", "<cmd>silent !TortoiseGitProc /command:commit<CR>", { desc = "TortoiseGit commit" })

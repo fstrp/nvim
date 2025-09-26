@@ -2,7 +2,8 @@ vim.opt.number = true
 vim.opt.relativenumber = not vim.opt.diff:get()
 vim.opt.mouse = "a"
 
-vim.o.wildmode = "" -- not strictly needed with workaround in ./keymap.lua?
+vim.o.confirm = true
+
 vim.opt.wrap = false
 vim.opt.smoothscroll = true
 vim.opt.fillchars:append({ diff = " " })
