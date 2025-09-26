@@ -15,6 +15,7 @@
   "lazy.nvim": { "branch": "main", "commit": "e3154ff0b7055f1bcded818d52cb518cac899ee8" },
   "lazydev.nvim": { "branch": "main", "commit": "034282543960cc2292be6a5f2b6da71d126837ad" },
   "leap.nvim": { "branch": "main", "commit": "72812e3e4a3a4f7ec027a8ec0b3554a0c6b3337c" },
+  "lsp-overloads.nvim": { "branch": "main", "commit": "93e11c9a01f81daa4a5644e772a7a77f53dc270f" },
   "lualine.nvim": { "branch": "master", "commit": "0a5a66803c7407767b799067986b4dc3036e1983" },
   "luvit-meta": { "branch": "main", "commit": "ce76f6f6cdc9201523a5875a4471dcfe0186eb60" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "37a336b653f8594df75c827ed589f1c91d91ff6c" },

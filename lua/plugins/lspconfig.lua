@@ -15,6 +15,7 @@ return { -- LSP Configuration & Plugins
 			},
 		},
 		{ "Bilal2453/luvit-meta", lazy = true },
+		{ "Issafalcon/lsp-overloads.nvim" },
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -64,13 +65,15 @@ return { -- LSP Configuration & Plugins
 					})
 				end
 
-				-- The following autocommand is used to enable inlay hints in your
-				-- code, if the language server you are using supports them
-				-- This may be unwanted, since they displace some of your code
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 					end, "[T]oggle Inlay [H]ints")
+				end
+
+				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_signatureHelp) then
+					---@diagnostic disable-next-line: missing-fields
+					require("lsp-overloads").setup(client, {})
 				end
 			end,
 		})

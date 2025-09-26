@@ -33,3 +33,6 @@ vim.keymap.set("c", "<tab>", "<C-y>", { silent = true, remap = true }) -- fixes 
 vim.keymap.set("n", "<leader>gt", "<cmd>silent !TortoiseGitProc /command:log<CR>", { desc = "TortoiseGit log" })
 vim.keymap.set("n", "<leader>gc", "<cmd>silent !TortoiseGitProc /command:commit<CR>", { desc = "TortoiseGit commit" })
 vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<CR>", { desc = "TortoiseGit fetch" })
+
+vim.keymap.set("n", "¨", "]", { remap = true })
+vim.keymap.set("n", "ü", "[", { remap = true })
