@@ -30,12 +30,6 @@ return { -- LSP Configuration & Plugins
 					vim.lsp.buf.code_action,
 					{ buffer = event.buf, desc = "LSP: [C]ode [A]ction" }
 				)
-				vim.keymap.set(
-					"n",
-					"<C-Space>",
-					vim.lsp.buf.signature_help,
-					{ buffer = event.buf, desc = "LSP: Signature Help" }
-				)
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -69,7 +63,22 @@ return { -- LSP Configuration & Plugins
 
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_signatureHelp) then
 					---@diagnostic disable-next-line: missing-fields
-					require("lsp-overloads").setup(client, {})
+					require("lsp-overloads").setup(client, {
+						---@diagnostic disable-next-line: missing-fields
+						ui = {
+							floating_window_above_cur_line = true,
+						},
+						---@diagnostic disable-next-line: missing-fields
+						keymaps = {
+							close_signature = "<S-Space>",
+						},
+					})
+					vim.keymap.set(
+						"i",
+						"<S-Space>",
+						"<cmd>LspOverloadsSignature<cr>", --better vim.lsp.buf.signature_help
+						{ buffer = event.buf, desc = "LSP: Signature Help" }
+					)
 				end
 			end,
 		})

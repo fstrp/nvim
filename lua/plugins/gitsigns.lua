@@ -24,7 +24,7 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
 				else
 					gitsigns.nav_hunk("next")
 				end
-			end)
+			end, { desc = "next hunk" })
 
 			map("n", "[c", function()
 				if vim.wo.diff then
@@ -32,17 +32,17 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
 				else
 					gitsigns.nav_hunk("prev")
 				end
-			end)
+			end, { desc = "previous hunk" })
 
-			map("n", "<leader>hs", gitsigns.stage_hunk)
-			map("n", "<leader>hr", gitsigns.reset_hunk)
-			map("n", "<leader>hp", gitsigns.preview_hunk)
+			map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "stage hunk" })
+			map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "reset hunk" })
+			map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "preview hunk" })
 			map("n", "<leader>hb", function()
 				gitsigns.blame_line({ full = true })
-			end)
-			map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+			end, { desc = "blame" })
+			map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "toggle line blame" })
 
-			map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>") -- Text object
+			map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "hunk text object" })
 		end,
 	},
 }
