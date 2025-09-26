@@ -13,8 +13,8 @@ vim.keymap.set({ "n", "v" }, "<leader>P", '"0P', { desc = "Paste last yanked bef
 -- <C-v> seems to work without extra keymap
 vim.keymap.set("v", "<C-c>", '"*y', { desc = "[C]opy to system [C]lipboard" })
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = "Move to next Quickfix item" })
 vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = "Move to previous Quickfix item" })
