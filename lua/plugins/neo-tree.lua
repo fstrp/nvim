@@ -18,9 +18,9 @@ return {
 				mappings = {
 					["\\"] = "close_window",
 				},
-				follow_current_file = {
-					enabled = true,
-				},
+			},
+			follow_current_file = {
+				enabled = true,
 			},
 		},
 	},
