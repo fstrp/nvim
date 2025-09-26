@@ -1,0 +1,25 @@
+﻿Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\nvim]
+"Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
+@="Open in Neovim"
+
+[HKEY_CLASSES_ROOT\*\shell\nvim\Command]
+@="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%1\""
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim]
+"Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
+@="Open in Neovim"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\nvim\Command]
+@="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%V\""
+
+
+[HKEY_CLASSES_ROOT\Directory\shell\nvim]
+"Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
+@="Open in Neovim"
+
+[HKEY_CLASSES_ROOT\Directory\shell\nvim\Command]
+@="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%V\""
+
