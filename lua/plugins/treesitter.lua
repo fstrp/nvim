@@ -13,6 +13,15 @@ return { -- Highlight, edit, and navigate code
 			additional_vim_regex_highlighting = { "ruby" },
 		},
 		indent = { enable = true, disable = { "ruby" } },
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "<leader>v",
+				node_incremental = "<leader>v",
+				scope_incremental = false,
+				node_decremental = "<bs>",
+			},
+		},
 	},
 	config = function(_, opts)
 		-- Prefer git instead of curl in order to improve connectivity in some environments
@@ -21,4 +30,3 @@ return { -- Highlight, edit, and navigate code
 		require("nvim-treesitter.configs").setup(opts)
 	end,
 }
-

@@ -11,7 +11,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		{ "nvim-telescope/telescope-ui-select.nvim" },
+		-- { "nvim-telescope/telescope-ui-select.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
 	},
 	config = function()
@@ -34,7 +34,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
 		-- Enable Telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "ui-select")
+		-- pcall(require("telescope").load_extension, "ui-select")
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
@@ -68,4 +68,3 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		end, { desc = "[S]earch [N]eovim files" })
 	end,
 }
-
