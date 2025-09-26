@@ -22,7 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 		{ import = "plugins" },
 	},
 	ui = {
@@ -33,5 +32,18 @@ require("lazy").setup({
 	},
 	rocks = {
 		enabled = false,
+	},
+	git = {
+		throttle = {
+			enabled = true,
+			rate = 10,
+			duration = 1000, -- ms
+		},
+	},
+	---@diagnostic disable-next-line: assign-type-mismatch
+	dev = {
+		path = "~/source",
+		patterns = { "fstrp" },
+		fallback = true,
 	},
 })
