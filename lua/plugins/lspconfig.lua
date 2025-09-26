@@ -4,11 +4,13 @@ return {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	dependencies = {
 		{
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason-lspconfig.nvim",
+			version = "*",
 			opts = {},
 			dependencies = {
 				{
-					"williamboman/mason.nvim",
+					"mason-org/mason.nvim",
+					version = "*",
 					opts = {
 						registries = {
 							"github:mason-org/mason-registry",

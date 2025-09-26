@@ -4,7 +4,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	event = "VimEnter",
 	dependencies = {
-		{ "emmanueltouzery/plenary.nvim", branch = "winborder" },
+		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",

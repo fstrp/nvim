@@ -3,8 +3,10 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
+	version = "*",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
 	---@type CatppuccinOptions
+	---@diagnostic disable-next-line: missing-fields
 	opts = {
 		integrations = {
 			diffview = true,
