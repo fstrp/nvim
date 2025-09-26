@@ -1,49 +1,49 @@
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("autocmd-highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("autocmd-highlight-yank", { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("autocmd-lsp-attach", { clear = true }),
-	callback = function(event)
-		vim.keymap.set(
-			"n",
-			"gD",
-			vim.lsp.buf.declaration,
-			{ buffer = event.buf, desc = "LSP: " .. "[G]oto [D]eclaration" }
-		)
+    group = vim.api.nvim_create_augroup("autocmd-lsp-attach", { clear = true }),
+    callback = function(event)
+        vim.keymap.set(
+            "n",
+            "gD",
+            vim.lsp.buf.declaration,
+            { buffer = event.buf, desc = "LSP: " .. "[G]oto [D]eclaration" }
+        )
 
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
-		if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-			local highlight_augroup = vim.api.nvim_create_augroup("autocmd-lsp-highlight", { clear = false })
-			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-				buffer = event.buf,
-				group = highlight_augroup,
-				callback = vim.lsp.buf.document_highlight,
-			})
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+            local highlight_augroup = vim.api.nvim_create_augroup("autocmd-lsp-highlight", { clear = false })
+            vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+                buffer = event.buf,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.document_highlight,
+            })
 
-			vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-				buffer = event.buf,
-				group = highlight_augroup,
-				callback = vim.lsp.buf.clear_references,
-			})
+            vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                buffer = event.buf,
+                group = highlight_augroup,
+                callback = vim.lsp.buf.clear_references,
+            })
 
-			vim.api.nvim_create_autocmd("LspDetach", {
-				group = vim.api.nvim_create_augroup("autocmd-lsp-detach", { clear = true }),
-				callback = function(event2)
-					vim.lsp.buf.clear_references()
-					vim.api.nvim_clear_autocmds({ group = "autocmd-lsp-highlight", buffer = event2.buf })
-				end,
-			})
-		end
+            vim.api.nvim_create_autocmd("LspDetach", {
+                group = vim.api.nvim_create_augroup("autocmd-lsp-detach", { clear = true }),
+                callback = function(event2)
+                    vim.lsp.buf.clear_references()
+                    vim.api.nvim_clear_autocmds({ group = "autocmd-lsp-highlight", buffer = event2.buf })
+                end,
+            })
+        end
 
-		if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-			vim.keymap.set("n", "<leader>th", function()
-				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-			end, { buffer = event.buf, desc = "LSP: " .. "[T]oggle Inlay [H]ints" })
-		end
-	end,
+        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+            vim.keymap.set("n", "<leader>th", function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+            end, { buffer = event.buf, desc = "LSP: " .. "[T]oggle Inlay [H]ints" })
+        end
+    end,
 })

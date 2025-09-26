@@ -20,6 +20,6 @@ vim.keymap.set("n", "ü", "[", { remap = true })
 vim.keymap.set("n", "<M-CR>", "gra", { remap = true })
 
 vim.keymap.set("n", "gK", function()
-	local new_config = not vim.diagnostic.config().virtual_lines
-	vim.diagnostic.config({ virtual_lines = new_config })
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = "Toggle diagnostic virtual_lines" })
