@@ -5,17 +5,8 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
-		{
-			"folke/lazydev.nvim",
-			ft = "lua",
-			opts = {
-				library = {
-					{ path = "luvit-meta/library", words = { "vim%.uv" } },
-				},
-			},
-		},
-		{ "Bilal2453/luvit-meta", lazy = true },
 		{ "Issafalcon/lsp-overloads.nvim" },
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -32,8 +23,13 @@ return { -- LSP Configuration & Plugins
 				map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") --  For example, in C this would take you to the header.
+				vim.keymap.set(
+					{ "n", "x" },
+					"<leader>ca",
+					vim.lsp.buf.code_action,
+					{ buffer = event.buf, desc = "LSP: [C]ode [A]ction" }
+				)
 				vim.keymap.set(
 					"n",
 					"<C-Space>",
