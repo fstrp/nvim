@@ -1,0 +1,19 @@
+return {
+	"MeanderingProgrammer/render-markdown.nvim",
+	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+	---@module 'render-markdown'
+	---@type render.md.UserConfig
+	opts = {
+		code = {
+			position = "right",
+			width = "block",
+			right_pad = 10,
+		},
+		quote = { repeat_linebreak = true },
+		win_options = {
+			showbreak = { default = "", rendered = "  " },
+			breakindent = { default = false, rendered = true },
+			breakindentopt = { default = "", rendered = "" },
+		},
+	},
+}
