@@ -5,7 +5,15 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "j-hui/fidget.nvim", opts = {} },
-		{ "folke/lazydev.nvim", ft = "lua", opts = {} },
+		{
+			"folke/lazydev.nvim",
+			ft = "lua",
+			opts = {
+				library = {
+					{ path = "luvit-meta/library", words = { "vim%.uv" } },
+				},
+			},
+		},
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -25,8 +33,8 @@ return { -- LSP Configuration & Plugins
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") --  For example, in C this would take you to the header.
 				vim.keymap.set(
-					"i",
-					"<C-S-x>",
+					"n",
+					"<C-Space>",
 					vim.lsp.buf.signature_help,
 					{ buffer = event.buf, desc = "LSP: Signature Help" }
 				)
@@ -66,6 +74,15 @@ return { -- LSP Configuration & Plugins
 			end,
 		})
 
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+		vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+		vim.diagnostic.config({
+			float = {
+				border = "rounded",
+			},
+		})
+
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -92,9 +109,6 @@ return { -- LSP Configuration & Plugins
 						completion = {
 							callSnippet = "Replace",
 						},
-						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-						-- diagnostics = { disable = { 'missing-fields' } },
-						diagnostics = { globals = { "vim" } },
 					},
 				},
 			},
