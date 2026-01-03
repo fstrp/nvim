@@ -20,5 +20,6 @@ return {
             breakindent = { default = false, rendered = true },
             breakindentopt = { default = "", rendered = "" },
         },
+        overrides = { buftype = { nofile = { code = { language = false } } } },
     },
 }

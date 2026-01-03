@@ -3,6 +3,7 @@
 return {
     "folke/lazydev.nvim",
     ft = "lua",
+    version = "*",
     ---@module 'lazydev'
     ---@type lazydev.Config
     opts = {

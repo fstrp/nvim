@@ -19,20 +19,13 @@ return {
         },
         appearance = { nerd_font_variant = "normal" },
         sources = {
-            default = { "lsp", "easy-dotnet", "path", "snippets" },
+            default = { "lsp", "path", "snippets" },
             providers = {
                 snippets = {
                     score_offset = 2,
                     min_keyword_length = 3,
                 },
                 path = { score_offset = 1 },
-                ["easy-dotnet"] = {
-                    name = "easy-dotnet",
-                    enabled = true,
-                    module = "easy-dotnet.completion.blink",
-                    score_offset = 10000,
-                    async = true,
-                },
             },
         },
         completion = {

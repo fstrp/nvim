@@ -1,22 +1,26 @@
-vim.diagnostic.config({
-    virtual_text = {
-        severity = { min = vim.diagnostic.severity.ERROR },
-    },
-    underline = {
-        severity = { min = vim.diagnostic.severity.HINT },
-    },
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = "",
-            [vim.diagnostic.severity.WARN] = "",
-            [vim.diagnostic.severity.INFO] = "",
-            [vim.diagnostic.severity.HINT] = "",
+if vim.o.diff then
+    vim.diagnostic.enable(false)
+else
+    vim.diagnostic.config({
+        virtual_text = {
+            severity = { min = vim.diagnostic.severity.ERROR },
         },
-        numhl = {
-            [vim.diagnostic.severity.WARN] = "WarningMsg",
-            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-            [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
-            [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+        underline = {
+            severity = { min = vim.diagnostic.severity.HINT },
         },
-    },
-})
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = "",
+                [vim.diagnostic.severity.WARN] = "",
+                [vim.diagnostic.severity.INFO] = "",
+                [vim.diagnostic.severity.HINT] = "",
+            },
+            numhl = {
+                [vim.diagnostic.severity.WARN] = "WarningMsg",
+                [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+                [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+                [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+            },
+        },
+    })
+end

@@ -3,6 +3,7 @@
 return {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
+    version = "*",
     dependencies = {
         "nvim-lua/plenary.nvim",
         {
@@ -70,6 +71,12 @@ return {
                     "gd",
                     builtin.lsp_definitions,
                     { buffer = event.buf, desc = "LSP:[G]oto [D]efinition" }
+                )
+                vim.keymap.set(
+                    "n",
+                    "grr",
+                    builtin.lsp_references,
+                    { buffer = event.buf, desc = "LSP:[G]oto [R]eferences" }
                 )
             end,
         })

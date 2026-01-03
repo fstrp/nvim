@@ -2,6 +2,7 @@
 ---@type LazySpec
 return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    enabled = not vim.o.diff,
     dependencies = {
         {
             "mason-org/mason-lspconfig.nvim",
