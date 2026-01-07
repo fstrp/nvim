@@ -8,6 +8,7 @@ return {
     ---@type CatppuccinOptions
     ---@diagnostic disable-next-line: missing-fields
     opts = {
+        term_colors = vim.g.neovide,
         integrations = {
             diffview = true,
             mason = true,

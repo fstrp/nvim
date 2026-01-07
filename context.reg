@@ -1,5 +1,10 @@
 Windows Registry Editor Version 5.00
 
+;;;;;;;;;
+; nvim
+;;;;;;;;;
+
+; file context menu
 [HKEY_CLASSES_ROOT\*\shell\nvim]
 "Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
 @="Open in Neovim"
@@ -7,7 +12,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\*\shell\nvim\Command]
 @="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%1\""
 
-
+; explorer background context menu
 [HKEY_CLASSES_ROOT\Directory\Background\shell\nvim]
 "Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
 @="Open in Neovim"
@@ -15,11 +20,39 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\Background\shell\nvim\Command]
 @="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%V\""
 
-
+; folder context menu
 [HKEY_CLASSES_ROOT\Directory\shell\nvim]
 "Icon"="C:\\tools\\neovim\\nvim-win64\\share\\nvim\\runtime\\neovim.ico"
 @="Open in Neovim"
 
 [HKEY_CLASSES_ROOT\Directory\shell\nvim\Command]
 @="C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe \"%V\""
+
+;;;;;;;;;
+; neovide
+;;;;;;;;;
+
+; file context menu
+[HKEY_CLASSES_ROOT\*\shell\neovide]
+@="Open in Neovide"
+"Icon"="\"C:\\Program Files\\Neovide\\neovide.exe\""
+
+[HKEY_CLASSES_ROOT\*\shell\neovide\Command]
+@="\"C:\\Program Files\\Neovide\\neovide.exe\" \"%1\""
+
+; explorer background context menu
+[HKEY_CLASSES_ROOT\Directory\Background\shell\neovide]
+@="Open in Neovide"
+"Icon"="\"C:\\Program Files\\Neovide\\neovide.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\neovide\Command]
+@="\"C:\\Program Files\\Neovide\\neovide.exe\" \"%V\""
+
+; folder context menu
+[HKEY_CLASSES_ROOT\Directory\shell\neovide]
+@="Open in Neovide"
+"Icon"="\"C:\\Program Files\\Neovide\\neovide.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\neovide\Command]
+@="\"C:\\Program Files\\Neovide\\neovide.exe\" \"%V\""
 

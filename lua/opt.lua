@@ -17,7 +17,11 @@ vim.opt.fillchars:append({ diff = " " })
 vim.opt.diffopt:append({ "iwhite", "linematch:60", "indent-heuristic", "algorithm:histogram", "context:30" })
 
 vim.opt.title = true
-vim.opt.titlestring = "nvim: %{split(split(getcwd(), '\\')[-1], '/')[-1]}"
+if not vim.o.diff then
+    vim.opt.titlestring = "nvim: %{split(split(getcwd(), '\\')[-1], '/')[-1]}"
+else
+    vim.opt.titlestring = "diff: %{argv()}"
+end
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -63,3 +67,19 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+if vim.g.neovide then
+    vim.g.neovide_cursor_animation_length = 0.04
+    vim.g.neovide_cursor_short_animation_length = 0
+    vim.g.neovide_cursor_trail_size = 0
+    vim.g.neovide_cursor_animate_in_insert_mode = false
+end
+
+if vim.fn.has("win32") then
+    vim.o.shell = '"C:\\Program Files\\Git\\bin\\bash.exe"'
+    vim.o.shellcmdflag = "-c"
+    vim.o.shellpipe = "2>&1| tee"
+    vim.o.shellquote = '"'
+    vim.o.shellredir = ">%s 2>&1"
+    vim.o.shellslash = true
+end

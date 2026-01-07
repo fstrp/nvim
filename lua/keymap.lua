@@ -4,7 +4,6 @@ vim.keymap.set("i", "<C-s>", "<Cmd>w<Cr><Esc>", { desc = "[S]ave" })
 vim.keymap.set({ "n", "x" }, "<leader>p", '"0p', { desc = "Paste last yanked" })
 vim.keymap.set({ "n", "x" }, "<leader>P", '"0P', { desc = "Paste last yanked before cursor" })
 
--- <C-v> seems to work without extra keymap
 vim.keymap.set("v", "<C-c>", '"*y', { desc = "[C]opy to system [C]lipboard" })
 vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete Word" })
 
@@ -26,4 +25,11 @@ end, { desc = "Toggle diagnostic virtual_lines" })
 
 if vim.o.diff then
     vim.keymap.set("n", "<esc>", "<cmd>qa<cr>")
+end
+
+if vim.g.neovide then
+    vim.keymap.set({ "i", "c" }, "<c-v>", "<c-r><c-o>+")
+    vim.keymap.set({ "n", "x" }, "<c-v>", '"+p')
+    vim.keymap.set("s", "<c-v>", '<c-o>"+p')
+    vim.keymap.set("t", "<c-v>", '<c-\\><c-n>"+pi')
 end
