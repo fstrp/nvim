@@ -1,67 +1,67 @@
-vim.opt.number = true
-vim.opt.relativenumber = not vim.opt.diff:get()
-vim.opt.mouse = "a"
+vim.o.number = true
+vim.o.relativenumber = not vim.o.diff
+vim.o.mouse = "a"
 
 vim.o.laststatus = 3
 vim.o.confirm = true
 vim.o.winborder = "rounded"
 
-vim.opt.wrap = false
-vim.opt.smoothscroll = true
+vim.o.wrap = false
+vim.o.smoothscroll = true
 vim.opt.fillchars:append({ diff = " " })
 vim.opt.diffopt:append({ "iwhite", "linematch:60", "indent-heuristic", "algorithm:histogram", "context:30" })
 
-vim.opt.title = true
+vim.o.title = true
 if not vim.o.diff then
-    vim.opt.titlestring = "nvim: %{split(split(getcwd(), '\\')[-1], '/')[-1]}"
+    vim.o.titlestring = "nvim: %{split(split(getcwd(), '\\')[-1], '/')[-1]}"
 else
-    vim.opt.titlestring = "diff: %{argv()}"
+    vim.o.titlestring = "diff: %{argv()}"
 end
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- Enable break indent
-vim.opt.breakindent = true
+vim.o.breakindent = true
 
 -- Save undo history
-vim.opt.undofile = true
+vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+vim.o.signcolumn = "yes"
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 400
+vim.o.timeoutlen = 400
 
 -- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
-vim.opt.list = true
+vim.o.list = true
 vim.opt.listchars = { tab = "· ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
+vim.o.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 20
+vim.o.scrolloff = 8
+vim.o.sidescrolloff = 20
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
 if vim.g.neovide then
     vim.g.neovide_cursor_animation_length = 0.04
