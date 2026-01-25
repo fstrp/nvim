@@ -75,11 +75,6 @@ if vim.g.neovide then
     vim.g.neovide_cursor_animate_in_insert_mode = false
 end
 
-if vim.fn.has("win32") then
-    vim.o.shell = '"C:\\Program Files\\Git\\bin\\bash.exe"'
-    vim.o.shellcmdflag = "-c"
-    vim.o.shellpipe = "2>&1| tee"
-    vim.o.shellquote = '"'
-    vim.o.shellredir = ">%s 2>&1"
-    vim.o.shellslash = true
+if vim.fn.executable("rg") == 1 then
+    vim.o.grepprg = "rg --vimgrep --smart-case"
 end
