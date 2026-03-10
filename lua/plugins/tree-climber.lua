@@ -2,6 +2,7 @@
 ---@type LazySpec
 return {
     "drybalka/tree-climber.nvim",
+    enabled = false, -- broken with nvim-treesitter main
     config = function()
         local keyopts = { noremap = true, silent = true }
         vim.keymap.set({ "n", "v", "o" }, "<C-h>", function()
