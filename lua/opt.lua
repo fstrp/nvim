@@ -1,6 +1,10 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.o.number = true
 vim.o.relativenumber = not vim.o.diff
 vim.o.mouse = "a"
+vim.o.nrformats = "blank,bin,hex"
 
 vim.o.laststatus = 3
 vim.o.confirm = true
@@ -8,8 +12,9 @@ vim.o.winborder = "rounded"
 
 vim.o.wrap = false
 vim.o.smoothscroll = true
-vim.opt.fillchars:append({ diff = " " })
-vim.opt.diffopt:append({ "iwhite", "linematch:60", "indent-heuristic", "algorithm:histogram", "context:30" })
+vim.o.fillchars = "diff: ,eob: ,fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:"
+vim.o.foldcolumn = "1"
+vim.opt.diffopt:append({ "iwhite", "algorithm:histogram", "context:30" })
 
 vim.o.title = true
 if not vim.o.diff then
@@ -18,43 +23,26 @@ else
     vim.o.titlestring = "diff: %{argv()}"
 end
 
--- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
-
--- Enable break indent
+vim.o.signcolumn = "yes"
+vim.o.inccommand = "split"
+vim.o.cursorline = true
 vim.o.breakindent = true
 
--- Save undo history
 vim.o.undofile = true
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Keep signcolumn on by default
-vim.o.signcolumn = "yes"
-
--- Decrease update time
 vim.o.updatetime = 250
-
--- Decrease mapped sequence wait time
 vim.o.timeoutlen = 400
 
--- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
 vim.o.list = true
 vim.opt.listchars = { tab = "· ", trail = "·", nbsp = "␣" }
 
--- Preview substitutions live, as you type!
-vim.o.inccommand = "split"
-
--- Show which line your cursor is on
-vim.o.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 20
 

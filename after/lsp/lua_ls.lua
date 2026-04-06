@@ -1,7 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'lspconfig'
----@type lspconfig.Config
+---@type vim.lsp.Config
 return {
+    ---@module "lspconfig"
+    ---@type lspconfig.settings.lua_ls
     settings = {
         Lua = {
             completion = { callSnippet = "Replace" },

@@ -1,8 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.loader.enable()
 
 require("opt")
 require("keymap")
 require("autocmd")
+require("usercmd")
 require("config")
-require("lazyinit")
