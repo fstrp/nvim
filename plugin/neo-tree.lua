@@ -11,6 +11,12 @@ vim.pack.add({
 
 require("neo-tree").setup({
     close_if_last_window = true,
+    window = {
+        mappings = {
+            ["l"] = "open",
+            ["h"] = "close_node",
+        },
+    },
     filesystem = {
         follow_current_file = {
             enabled = true,

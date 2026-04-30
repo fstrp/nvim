@@ -54,15 +54,6 @@
       "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
-    "mason-lspconfig.nvim": {
-      "rev": "f2fa60409630ec2d24acf84494fb55e1d28d593c",
-      "src": "https://github.com/mason-org/mason-lspconfig.nvim",
-      "version": ">=0.0.0"
-    },
-    "mason-tool-installer.nvim": {
-      "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
-      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
-    },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim",
@@ -108,7 +99,7 @@
       "version": ">=0.0.0"
     },
     "roslyn.nvim": {
-      "rev": "ff43201090361b8936e008a006473b59ef2c0ca6",
+      "rev": "6a5e60a7c25d9ce0835aa9c69379f1c92e0a9d56",
       "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "telescope-fzf-native.nvim": {

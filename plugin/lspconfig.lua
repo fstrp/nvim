@@ -5,8 +5,6 @@ end
 vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig", version = vim.version.range("*") },
     { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range("*") },
-    { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range("*") },
-    { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 })
 
 require("mason").setup({
@@ -16,8 +14,13 @@ require("mason").setup({
     },
 })
 
-require("mason-lspconfig").setup()
+local autoInstall = { "tree-sitter-cli", "lua-language-server", "stylua", "json-lsp" }
+local registry = require("mason-registry")
 
-require("mason-tool-installer").setup({
-    ensure_installed = { "tree-sitter-cli", "lua_ls", "stylua", "json-lsp" },
-})
+for _, package in ipairs(autoInstall) do
+    if not registry.is_installed(package) then
+        registry.get_package(package):install()
+    end
+end
+
+vim.lsp.enable({ "lua_ls", "roslyn", "taplo", "stylua", "yamlls", "jsonls" })
