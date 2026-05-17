@@ -2,6 +2,10 @@ vim.api.nvim_create_user_command("PackUp", function()
     vim.pack.update()
 end, { desc = "Update vim.pack plugins" })
 
+vim.api.nvim_create_user_command("PackRestore", function()
+    vim.pack.update(nil, { force = true, target = "lockfile" })
+end, { desc = "Restore vim.pack plugins to lockfile version" })
+
 vim.api.nvim_create_user_command("Utree", function()
     vim.cmd.packadd("nvim.undotree")
     vim.cmd.Undotree()

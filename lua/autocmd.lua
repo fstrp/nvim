@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         )
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+        if client and client:supports_method("textDocument/documentHighlight") then
             local highlight_augroup = vim.api.nvim_create_augroup("custom.lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                 desc = "LSP documentHightlight",
@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
             })
         end
 
-        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+        if client and client:supports_method("textDocument/inlayHint") then
             vim.api.nvim_buf_create_user_command(event.buf, "ToggleInlayHints", function()
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
             end, { desc = "Toggle LSP Inlay Hints" })
@@ -81,6 +81,26 @@ vim.api.nvim_create_autocmd("PackChanged", {
         end
         if name == "telescope-fzf-native" then
             vim.system({ "make" }, { cwd = ev.data.path })
+        end
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "TermRequest" }, {
+    desc = "Handles OSC 7 dir change requests",
+    group = vim.api.nvim_create_augroup("custom.osc-7", { clear = true }),
+    callback = function(ev)
+        local val, n = string.gsub(ev.data.sequence, "\027]7;file://[^/]*", "")
+        if n > 0 then
+            -- Fix Bash on Windows path ("/c/path" -> "c:/path")
+            local dir = string.gsub(val, "^/(.)/", "%1:/")
+            if vim.fn.isdirectory(dir) == 0 then
+                vim.notify("invalid dir: " .. dir)
+                return
+            end
+            vim.b[ev.buf].osc7_dir = dir
+            if vim.api.nvim_get_current_buf() == ev.buf then
+                vim.cmd.cd(dir)
+            end
         end
     end,
 })

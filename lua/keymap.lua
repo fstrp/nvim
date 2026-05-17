@@ -15,7 +15,12 @@ vim.keymap.set("n", "<leader>gc", "<cmd>silent !TortoiseGitProc /command:commit<
 vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<CR>", { desc = "TortoiseGit fetch" })
 
 vim.keymap.set({ "n", "v" }, "¨", "]", { remap = true })
+vim.keymap.set({ "n", "v" }, "¨¨", "]]", { remap = true })
 vim.keymap.set({ "n", "v" }, "ü", "[", { remap = true })
+vim.keymap.set({ "n", "v" }, "üü", "[[", { remap = true })
+vim.keymap.set({ "n", "v" }, "ü¨", "[]", { remap = true })
+vim.keymap.set({ "n", "v" }, "¨ü", "][", { remap = true })
+
 vim.keymap.set("n", "<M-CR>", "gra", { remap = true })
 
 if vim.o.diff then
