@@ -10,10 +10,6 @@ vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete Word" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 vim.keymap.set("t", "<S-Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.keymap.set("n", "<leader>gt", "<cmd>silent !TortoiseGitProc /command:log<CR>", { desc = "TortoiseGit log" })
-vim.keymap.set("n", "<leader>gc", "<cmd>silent !TortoiseGitProc /command:commit<CR>", { desc = "TortoiseGit commit" })
-vim.keymap.set("n", "<leader>gf", "<cmd>silent !TortoiseGitProc /command:fetch<CR>", { desc = "TortoiseGit fetch" })
-
 vim.keymap.set({ "n", "v" }, "¨", "]", { remap = true })
 vim.keymap.set({ "n", "v" }, "¨¨", "]]", { remap = true })
 vim.keymap.set({ "n", "v" }, "ü", "[", { remap = true })
