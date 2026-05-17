@@ -12,5 +12,5 @@ require("lualine").setup({
             "lsp_status",
         },
     },
-    extensions = { "quickfix", "neo-tree", "oil" },
+    extensions = { "quickfix", "neo-tree" },
 })

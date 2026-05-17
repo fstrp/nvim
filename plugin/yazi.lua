@@ -17,6 +17,7 @@ vim.api.nvim_create_user_command("Yazi", function()
 
     local cmd = {
         "yazi",
+        vim.uv.cwd(),
         "--chooser-file=" .. chooser_file,
         "--cwd-file=" .. cwd_file,
     }

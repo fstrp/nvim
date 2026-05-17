@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "Recover.vim": {
-      "rev": "e61319bce3cd1004e5b695933296d8f267dd65a3",
-      "src": "https://github.com/chrisbra/Recover.vim"
-    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",

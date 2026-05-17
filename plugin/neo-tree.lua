@@ -12,12 +12,14 @@ vim.pack.add({
 require("neo-tree").setup({
     close_if_last_window = true,
     window = {
+        position = "right",
         mappings = {
             ["l"] = "open",
             ["h"] = "close_node",
         },
     },
     filesystem = {
+        hijack_netrw_behavior = "open_current",
         follow_current_file = {
             enabled = true,
         },
@@ -27,4 +29,4 @@ require("neo-tree").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal right<cr>", { desc = "NeoTree reveal" })
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<cr>", { desc = "NeoTree reveal" })

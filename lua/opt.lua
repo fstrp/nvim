@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 vim.o.number = true
 vim.o.relativenumber = not vim.o.diff
 vim.o.mouse = "a"
+vim.o.mousescroll = "ver:6"
 vim.o.nrformats = "blank,bin,hex"
 
 vim.o.laststatus = 3
