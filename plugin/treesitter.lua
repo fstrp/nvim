@@ -14,10 +14,14 @@ local function treesitter_try_attach(buf, language)
 
     vim.treesitter.start(buf, language) -- highlighting
 
-    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-    vim.wo[0][0].foldmethod = "expr"
+    if vim.treesitter.query.get(language, "folds") then
+        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        vim.wo[0][0].foldmethod = "expr"
+    end
 
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    if vim.treesitter.query.get(language, "indents") then
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
 end
 
 local available_parsers = require("nvim-treesitter").get_available()
