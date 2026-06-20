@@ -28,10 +28,6 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": ">=0.0.0"
     },
-    "indentmini.nvim": {
-      "rev": "38572ce5a7a064a5deb89d6d861b7c40fc929ab1",
-      "src": "https://github.com/nvimdev/indentmini.nvim"
-    },
     "kulala.nvim": {
       "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
       "src": "https://github.com/mistweaverco/kulala.nvim",
@@ -50,6 +46,11 @@
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
       "src": "https://github.com/mason-org/mason.nvim",
       "version": ">=0.0.0"
+    },
+    "mini.indentscope": {
+      "rev": "d3f955f09b1a05d25d5a7740338fba2baaee41a3",
+      "src": "https://github.com/nvim-mini/mini.indentscope",
+      "version": "'stable'"
     },
     "neo-tree.nvim": {
       "rev": "83e7a2982fd12b9c3d35bc39dd5877cd91a02a61",
