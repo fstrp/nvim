@@ -9,7 +9,7 @@ vim.pack.add({
 
 require("mason").setup()
 
-local autoInstall = { "tree-sitter-cli", "lua-language-server", "stylua", "json-lsp" }
+local autoInstall = { "tree-sitter-cli", "lua-language-server", "stylua", "json-lsp", "kulala-fmt" }
 local registry = require("mason-registry")
 
 for _, package in ipairs(autoInstall) do
