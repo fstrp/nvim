@@ -3,7 +3,7 @@ vim.pack.add({
     "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
     "https://github.com/nvim-telescope/telescope-ui-select.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
-    { src = "https://github.com/nvim-telescope/telescope.nvim" }, -- can't use version because telescope has borked tags
+    { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") },
 })
 
 require("telescope").setup({
