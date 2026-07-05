@@ -3,7 +3,7 @@ local function destructive_read(exit_code, filename)
     if exit_code == 0 then
         local f = io.open(filename)
         if f then
-            file_content = vim.fn.fnameescape(f:read("*l"))
+            file_content = string.gsub(vim.fn.fnameescape(f:read("*l")), "^search://.*/", "")
             f:close()
         end
     end
